@@ -1,0 +1,49 @@
+<h1>Cryptocurrency Prices</h1>
+<p>All the latest market updates.</p>
+
+<br/>
+<br/>
+
+<table class="table table-striped table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>#</th>  
+      <th>Name</th>
+      <th>Current Price</th>
+      <th>Market Cap</th>
+      <th>7 Day % </th>
+      <th>24 Hour % </th>
+      <th>1 Hour % </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @all_coins.each do |coin| %>
+        <tr>
+            <td><%= coin["rank"] %><br/></td>
+            <td><%= coin["name"] %><br/></td>
+            <td><%= number_to_currency(coin["price_usd"]) %><br/></td>
+            <td><%= number_to_currency(coin["market_cap_usd"]) %></td>
+            <% if coin["percent_change_7d"].to_i > 0 %>
+                    <td class="success"><%= coin["percent_change_7d"] %> % </td>
+                <% else %>
+                    <td class="danger"><%= coin["percent_change_7d"] %> % </td>
+                <% end %>
+                <% if coin["percent_change_24h"].to_i > 0 %>
+                    <td class="success"><%= coin["percent_change_7d"] %> % </td>
+                <% else %>
+                    <td class="danger"><%= coin["percent_change_7d"] %> % </td>
+                <% end %>
+                <% if coin["percent_change_1h"].to_i > 0 %>
+                    <td class="success"><%= coin["percent_change_7d"] %> % </td>
+                <% else %>
+                    <td class="danger"><%= coin["percent_change_7d"] %> % </td>
+                <% end %>
+        </tr>
+    <% end %>
+  </tbody>
+</table>  
+
+
+
+

@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<% for x in @show_cryptos %>
+    <% if @crypto.symbol.upcase == x["symbol"] %>
+        <% @crypto_name = x["name"] %>
+        <% @crypto_symbol = x["symbol"] %>
+        <% @crypto_rank = x["rank"] %>
+        <% @crypto_price = x["price_usd"] %>
+        <% @crypto_marketcap = x["market_cap_usd"] %>
+        <% @crypto_supply = x["available_supply"] %>
+        <% @crypto_total = x["total_supply"] %>
+        <% @crypto_7d = x["percent_change_7d"] %>
+        <% @crypto_24h = x["percent_change_24h"] %>
+        <% @crypto_1h = x["percent_change_1h"] %>
+    <% end %>
+<% end %>    
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1 class="panel-title"><%= @crypto_symbol%> Details</h1>
+  </div>
+  <div class="panel-body">
+    
+    <h1><strong><%= @crypto_name %></strong></h1>
+    <p><strong>Amount owned: </strong><%= @crypto.amount_owned %></p>
+    <p><strong>Paid per: </strong><%= @crypto.paid_per %></p>
+    <p><strong>Current Price: </strong><%= number_to_currency(@crypto_price) %></p>
+    <p><strong>Market Cap: </strong><%= number_to_currency(@crypto_marketcap) %></p>
+    <p><strong>Available: </strong><%= number_to_currency(@crypto_supply) %></p>
+    <p><strong>Total Supply: </strong><%= number_to_currency(@crypto_total) %></p>
+    
+  </div>
+  
+  <div class="panel-footer">
+    <button type="button" class="btn btn-default"><%= link_to 'Edit', edit_crypto_path(@crypto) %></button>
+    <button type="button" class="btn btn-default"><%= link_to 'Delete', crypto_path(@crypto), method: :delete, data: {confirm: 'Are you sure?'} %></button>
+    <button type="button" class="btn btn-default"><%= link_to 'Back', cryptos_path %></button>
+  </div>
+</div>
+
+
+
+

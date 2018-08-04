@@ -1,0 +1,20 @@
+<h3>Search</h3>
+<p>Get details ion a single currency.</p>
+ 
+<br/>
+ 
+<%= form_tag home_search_path, :method => 'POST' do %>
+   <%= text_field_tag 'sym', nil, placeholder: 'Enter the symbol of your currency', size: 50 %>
+   <%= submit_tag 'Seach for currency' %>
+<% end %>
+ 
+<br/>
+
+<% if @symbol %> 
+    <% for x in @searched_coins %>
+        <% if @symbol == x["symbol"] %>
+            <%= x["name"] %>: <%= x["price_usd"] %></br></br>
+        <% end %>    
+    <% end %>
+<% end %>
+ 

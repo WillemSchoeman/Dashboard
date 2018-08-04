@@ -1,0 +1,13 @@
+ 
+<h1>Test Page</h1>
+<p>Try to get things working properly.</p>
+
+<% @test_coins %>
+
+<% for x in @test_coins %>
+    <% for coin in @my_test %>
+        <% if coin == x["symbol"] %>
+            <%= x["name"] %>: <%= x["price_usd"] %></br></br>
+        <% end %>
+    <% end %>    
+<% end %>
