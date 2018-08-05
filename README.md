@@ -6,8 +6,8 @@ The application pulls JSON data from the API, parses it and then displays the pr
 
 **Libraries or Gems used:**
 
-* Devise for user authentication.
-* Bootstrap for simple styling.
+* [Devise](https://github.com/plataformatec/devise) for user authentication.
+* [Bootstrap V3](https://getbootstrap.com/docs/3.3/) for simple styling.
 
 **Sample Screenshots:**
 
