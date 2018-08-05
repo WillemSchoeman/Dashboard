@@ -30,14 +30,14 @@
                     <td class="danger"><%= coin["percent_change_7d"] %> % </td>
                 <% end %>
                 <% if coin["percent_change_24h"].to_i > 0 %>
-                    <td class="success"><%= coin["percent_change_7d"] %> % </td>
+                    <td class="success"><%= coin["percent_change_24h"] %> % </td>
                 <% else %>
-                    <td class="danger"><%= coin["percent_change_7d"] %> % </td>
+                    <td class="danger"><%= coin["percent_change_24h"] %> % </td>
                 <% end %>
                 <% if coin["percent_change_1h"].to_i > 0 %>
-                    <td class="success"><%= coin["percent_change_7d"] %> % </td>
+                    <td class="success"><%= coin["percent_change_1h"] %> % </td>
                 <% else %>
-                    <td class="danger"><%= coin["percent_change_7d"] %> % </td>
+                    <td class="danger"><%= coin["percent_change_1h"] %> % </td>
                 <% end %>
         </tr>
     <% end %>

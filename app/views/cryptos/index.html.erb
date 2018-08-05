@@ -40,14 +40,14 @@
                     <td class="danger"><%= x["percent_change_7d"] %> % </td>
                 <% end %>
                 <% if x["percent_change_24h"].to_i > 0 %>
-                    <td class="success"><%= x["percent_change_7d"] %> % </td>
+                    <td class="success"><%= x["percent_change_24h"] %> % </td>
                 <% else %>
-                    <td class="danger"><%= x["percent_change_7d"] %> % </td>
+                    <td class="danger"><%= x["percent_change_24h"] %> % </td>
                 <% end %>
                 <% if x["percent_change_1h"].to_i > 0 %>
-                    <td class="success"><%= x["percent_change_7d"] %> % </td>
+                    <td class="success"><%= x["percent_change_1h"] %> % </td>
                 <% else %>
-                    <td class="danger"><%= x["percent_change_7d"] %> % </td>
+                    <td class="danger"><%= x["percent_change_1h"] %> % </td>
                 <% end %>
                 <td><%= crypto.amount_owned %></td>
                 <td><%= number_to_currency(crypto.paid_per) %></td>
