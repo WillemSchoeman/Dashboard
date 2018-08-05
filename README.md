@@ -16,4 +16,4 @@ The application pulls JSON data from the API, parses it and then displays the pr
 
 **Note:**
 
-The app in the current for uses version 1 of the Public API. Coinmarketcap reciently release the professional version of the API and the public API will be taken offline on 4 December 2018. 
+The app in the current for uses version 1 of the Public API. Coinmarketcap recently release the professional version of the API. The public API will be taken offline on 4 December 2018. 
